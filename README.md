@@ -1,42 +1,78 @@
-# websocket
+# **Ktor WebSocket Chat**
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+A simple real-time chat application built with a **Ktor** backend and a clean, responsive frontend using vanilla **HTML, CSS, and JavaScript**. This project serves as an excellent example of setting up a WebSocket server in Kotlin for instant, bidirectional communication.
 
-Here are some useful links to get you started:
+The application features a modern chat interface where messages sent by the user are aligned to the right, and messages from other users are aligned to the left, mimicking popular chat apps.
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
+## **✨ Features**
 
-## Features
+* **Real-time Messaging:** Instant message delivery using WebSockets.  
+* **User Presence:** Real-time notifications when users join or leave the chat.  
+* **Modern UI:** A clean and responsive chat interface with message bubbles aligned based on the sender.  
+* **Structured Communication:** Uses JSON for clear and extensible communication between the client and server.  
+* **Private Commands:** Ability to handle server-side commands (e.g., \!users) that only the requester can see.  
+* **Clean Architecture:** Well-organized project structure with separation of concerns (routing, serialization, WebSocket logic, DTOs).
 
-Here's a list of features included in this project:
+## **🛠️ Tech Stack**
 
-| Name                                                                   | Description                                                                        |
-| ------------------------------------------------------------------------|------------------------------------------------------------------------------------ |
-| [Content Negotiation](https://start.ktor.io/p/content-negotiation)     | Provides automatic content conversion according to Content-Type and Accept headers |
-| [Routing](https://start.ktor.io/p/routing)                             | Provides a structured routing DSL                                                  |
-| [kotlinx.serialization](https://start.ktor.io/p/kotlinx-serialization) | Handles JSON serialization using kotlinx.serialization library                     |
-| [WebSockets](https://start.ktor.io/p/ktor-websockets)                  | Adds WebSocket protocol support for bidirectional client connections               |
+* **Backend:**  
+  * [Kotlin](https://kotlinlang.org/)  
+  * [Ktor](https://ktor.io/) \- For building the web server and WebSocket endpoint.  
+  * [Kotlinx Serialization](https://github.com/Kotlin/kotlinx.serialization) \- For JSON serialization/deserialization.  
+* **Frontend:**  
+  * HTML5  
+  * CSS3 (with Flexbox for layout)  
+  * Vanilla JavaScript (ES6+)
 
-## Building & Running
+## **🚀 How to Run Locally**
 
-To build or run the project, use one of the following tasks:
+To get a local copy up and running, follow these simple steps.
 
-| Task                          | Description                                                          |
-| -------------------------------|---------------------------------------------------------------------- |
-| `./gradlew test`              | Run the tests                                                        |
-| `./gradlew build`             | Build everything                                                     |
-| `buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `publishImageToLocalRegistry` | Publish the docker image locally                                     |
-| `run`                         | Run the server                                                       |
-| `runDocker`                   | Run using the local docker image                                     |
+### **Prerequisites**
 
-If the server starts successfully, you'll see the following output:
+* JDK 11 or higher.  
+* IntelliJ IDEA (Community or Ultimate) is recommended.
 
-```
-2024-12-04 14:32:45.584 [main] INFO  Application - Application started in 0.303 seconds.
-2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
-```
+### **Steps**
 
+1. **Clone the repository:**  
+   git clone \[https://github.com/your-username/Ktor-WebSocket-Chat.git\](https://github.com/your-username/Ktor-WebSocket-Chat.git)
+
+2. **Open the project:**  
+   * Open IntelliJ IDEA.  
+   * Select File \> Open... and choose the cloned project directory.  
+   * Trust the project and wait for Gradle to sync the dependencies.  
+3. **Run the application:**  
+   * Navigate to src/main/kotlin/com/example/Application.kt.  
+   * Click the green play button next to the main function to start the server.  
+4. **Open the chat:**  
+   * Open your web browser and go to http://localhost:8080.  
+   * Open multiple tabs or browsers to simulate a conversation between different users.
+
+## **📂 Project Structure**
+
+.  
+├── build.gradle.kts        \# Gradle build script  
+├── src  
+│   ├── main  
+│   │   ├── kotlin  
+│   │   │   └── com  
+│   │   │       └── example  
+│   │   │           ├── dto  
+│   │   │           │   └── WebSocketContracts.kt  \# Data classes (DTOs) for JSON  
+│   │   │           ├── Application.kt           \# Main application entry point  
+│   │   │           ├── Routing.kt               \# Handles HTTP routing and serving static files  
+│   │   │           ├── Serialization.kt         \# Configures JSON content negotiation  
+│   │   │           └── Sockets.kt               \# Core WebSocket logic  
+│   │   └── resources  
+│   │       ├── application.yaml     \# Ktor configuration  
+│   │       ├── logback.xml          \# Logging configuration  
+│   │       └── static               \# Frontend files  
+│   │           ├── index.html  
+│   │           ├── main.js  
+│   │           └── styles.css  
+└── ...
+
+## **📄 License**
+
+This project is licensed under the MIT License \- see the LICENSE file for details.
