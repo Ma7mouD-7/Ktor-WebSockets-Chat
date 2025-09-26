@@ -36,30 +36,32 @@ To get a local copy up and running, follow these simple steps.
 ### **Steps**
 
 1. **Clone the repository:**  
-   git clone \[https://github.com/your-username/Ktor-WebSocket-Chat.git\](https://github.com/your-username/Ktor-WebSocket-Chat.git)
+   ``` git clone https://github.com/Ma7mouD-7/Ktor-WebSockets-Chat.git ```
 
-2. **Open the project:**  
+3. **Open the project:**  
    * Open IntelliJ IDEA.  
    * Select File \> Open... and choose the cloned project directory.  
    * Trust the project and wait for Gradle to sync the dependencies.  
-3. **Run the application:**  
+4. **Run the application:**  
    * Navigate to src/main/kotlin/com/example/Application.kt.  
    * Click the green play button next to the main function to start the server.  
-4. **Open the chat:**  
+5. **Open the chat:**  
    * Open your web browser and go to http://localhost:8080.  
    * Open multiple tabs or browsers to simulate a conversation between different users.
 
 ## **📂 Project Structure**
 
-.  
+```  
 ├── build.gradle.kts        \# Gradle build script  
 ├── src  
 │   ├── main  
 │   │   ├── kotlin  
 │   │   │   └── com  
 │   │   │       └── example  
-│   │   │           ├── dto  
-│   │   │           │   └── WebSocketContracts.kt  \# Data classes (DTOs) for JSON  
+│   │   │           ├── dto  \# Data classes (DTOs) for JSON    
+│   │   │           │   └── Action.kt  
+│   │   │           │   └── IncomingMessage.kt  
+│   │   │           │   └── OutgoingMessage.kt         
 │   │   │           ├── Application.kt           \# Main application entry point  
 │   │   │           ├── Routing.kt               \# Handles HTTP routing and serving static files  
 │   │   │           ├── Serialization.kt         \# Configures JSON content negotiation  
@@ -71,7 +73,8 @@ To get a local copy up and running, follow these simple steps.
 │   │           ├── index.html  
 │   │           ├── main.js  
 │   │           └── styles.css  
-└── ...
+└── 
+```
 
 ## **📄 License**
 
