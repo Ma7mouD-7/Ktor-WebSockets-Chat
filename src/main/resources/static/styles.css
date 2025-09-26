@@ -1,89 +1,120 @@
 body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f8;
-            color: #333;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        /* NEW: Use flexbox to align messages */
-        #messages {
-            height: 500px;
-            padding: 10px;
-            overflow-y: auto;
-            background: #fafafa;
-            margin: 10px 0;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Space between messages */
-        }
-
-        /* NEW: Base style for all message bubbles */
-        .message-bubble {
-            max-width: 70%;
-            padding: 10px 15px;
-            border-radius: 18px;
-            line-height: 1.4;
-            word-wrap: break-word;
-        }
-        .message-bubble .sender {
-            font-weight: bold;
-            font-size: 0.9em;
-            margin-bottom: 4px;
-            color: #555;
-        }
-        .message-bubble .content {
-            margin: 0;
-        }
-        .message-bubble .timestamp {
-            font-size: 0.75em;
-            color: #999;
-            text-align: right;
-            margin-top: 5px;
-            display: block;
-        }
-
-        /* NEW: Style for messages from OTHERS */
-        .other-message {
-            background-color: #e9e9eb;
-            align-self: flex-start; /* Align to the left */
-            border-bottom-left-radius: 4px;
-        }
-
-        /* NEW: Style for messages from ME */
-        .my-message {
-            background-color: #007aff;
-            color: white;
-            align-self: flex-end; /* Align to the right */
-            border-bottom-right-radius: 4px;
-        }
-        .my-message .sender { display: none; } /* Hide my own name */
-        .my-message .timestamp { color: #e0e0e0; }
-
-        /* NEW: Style for system messages */
-        .system-message {
-            align-self: center;
-            font-style: italic;
-            color: #666;
-            background-color: #f0f0f0;
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: 0.85em;
-        }
-        .controls { display: flex; gap: 10px; margin: 10px 0; }
-        input[type="text"] { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 20px; font-size: 16px; }
-        button { padding: 12px 20px; background: #007aff; color: white; border: none; border-radius: 20px; cursor: pointer; font-size: 16px; transition: background-color 0.2s; }
-        button:hover { background: #0056b3; }
-        button:disabled { background: #ccc; cursor: not-allowed; }
-        .status { padding: 10px; margin: 10px 0; border-radius: 8px; text-align: center; font-weight: bold; }
-        .connected { background: #d4edda; color: #155724; }
-        .disconnected { background: #f8d7da; color: #721c24; }
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f8;
+    color: #333;
+}
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+#messages {
+    height: 500px;
+    padding: 10px;
+    overflow-y: auto;
+    background: #fafafa;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.message-bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.message-bubble .sender {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 4px;
+    color: #555;
+}
+.message-bubble .content {
+    margin: 0;
+}
+.message-bubble .timestamp {
+    font-size: 0.75em;
+    color: #999;
+    text-align: right;
+    margin-top: 5px;
+    display: block;
+}
+.other-message {
+    background-color: #e9e9eb;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+.my-message {
+    background-color: #007aff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+.my-message .sender {
+	display: none;
+}
+.my-message .timestamp {
+	color: #e0e0e0;
+}
+.system-message {
+    align-self: center;
+    font-style: italic;
+    color: #666;
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
+}
+.controls {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 16px;
+}
+button {
+    padding: 12px 20px;
+    background: #007aff;
+    color: white:
+	border: none:
+	border-radius: 20px:
+	cursor: pointer:
+	font-size: 16px:
+	transition: background-color 0.2s;
+}
+button:hover {
+	background: #0056b3:
+}
+button:disabled {
+	background: #ccc:
+	cursor: not-allowed:
+}
+.status {
+	padding: 10px:
+	margin: 10px 0:
+	border-radius: 8px:
+	text-align: center:
+	font-weight: bold:
+}
+.connected {
+    background: #d4edda:
+	color: #155724:
+}
+.disconnected {
+    background: #f8d7da:
+	color: #721c24:
+}

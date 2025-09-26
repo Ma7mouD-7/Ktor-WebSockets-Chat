@@ -12,14 +12,24 @@ application {
 }
 
 dependencies {
-    implementation(libs.ktor.server.content.negotiation)
+    // Ktor Server Core and Engine
     implementation(libs.ktor.server.core)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation(libs.ktor.server.websockets)
     implementation(libs.ktor.server.netty)
+
+    // WebSocket Support
+    implementation(libs.ktor.server.websockets)
+
+    // Content Negotiation for handling JSON
+    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+
+    // Logging
     implementation(libs.logback.classic)
+
+    // Configuration from application.yaml
     implementation(libs.ktor.server.config.yaml)
+
+    // Testing
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
 }
