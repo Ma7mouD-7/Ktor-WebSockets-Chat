@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat</title>
+    <link href="styles.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Ktor Chat</h1>
+    <div id="status" class="status disconnected">Disconnected</div>
+    <div class="controls">
+        <input type="text" id="nameInput" placeholder="Enter your name..." maxlength="20">
+        <button id="connectBtn" onclick="connect()">Connect</button>
+        <button id="disconnectBtn" onclick="disconnect()" disabled>Disconnect</button>
+    </div>
+    <ul id="messages"></ul>
+    <div class="controls">
+        <input type="text" id="messageInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)" disabled>
+        <button id="sendBtn" onclick="sendMessage()" disabled>Send</button>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
